@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Acao } from "../interface/Acao";
 import { fetchRodolfo } from "../service/RodolfoClient";
+import { Card } from "react-bootstrap";
 
 const AcaoUser: React.FC<Acao> = ({ symbol}) => {
   const [user, setUserData] = useState<any | null>(null);
@@ -22,13 +23,16 @@ const AcaoUser: React.FC<Acao> = ({ symbol}) => {
   if (error) return <div> Error: {error}</div>;
 
   return (
-    <>
-      <div>
-        <h1>{user?.symbol}</h1>
-        <h2>{user?.currency}</h2>
-      </div>
-    </>
-  );
+    <div className="d-flex justify-content-center mt-4">
+        <Card style={{ width: '22rem' }} className="mx-auto">
+        <Card.Body>
+            <Card.Title>{user?.symbol}</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">{user?.currency}</Card.Subtitle>
+            <Card.Text>{user?.longName}</Card.Text>
+        </Card.Body>
+        </Card>
+    </div>
+  )
 };
 
 export default AcaoUser;

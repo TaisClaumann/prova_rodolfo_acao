@@ -8,6 +8,6 @@ const apiClient = axios.create({
 })
 
 export const fetchRodolfo = (symbol: string)  => {
-   return apiClient.get<any>(`https://g183k2nx-7029.brs.devtunnels.ms/Share/${symbol}`);
+   return apiClient.get<any>(`https://rvh98qbf-44321.brs.devtunnels.ms/Share/${symbol}`);
 }
 

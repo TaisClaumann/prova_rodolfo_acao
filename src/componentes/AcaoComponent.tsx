@@ -24,12 +24,15 @@ const AcaoUser: React.FC<Acao> = ({ symbol}) => {
 
   return (
     <div className="d-flex justify-content-center mt-4">
-        <Card style={{ width: '22rem' }} className="mx-auto">
-        <Card.Body>
-            <Card.Title>{user?.symbol}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">{user?.currency}</Card.Subtitle>
-            <Card.Text>{user?.longName}</Card.Text>
-        </Card.Body>
+        <Card style={{ width: '25rem' }} className="mx-auto">
+            <Card.Body>
+                <img src={user?.logourl} alt="Logo" />
+                <Card.Title>{user?.symbol}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">{user?.currency}</Card.Subtitle>
+                <Card.Text>{user?.longName}</Card.Text>
+                <Card.Text style={{ marginBottom: '0.5rem' }}>Preço de Mercado Regular: {user?.regularMarketPrice}</Card.Text>
+                <Card.Text style={{ marginBottom: '0.5rem' }}>Intervalo de 52 semanas: {user?.fiftyTwoWeekRange}</Card.Text>
+            </Card.Body>
         </Card>
     </div>
   )
